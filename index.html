@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Personalizável</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #conteudo {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Página Personalizável</h1>
+    <div id="conteudo">
+        <!-- Conteúdo personalizado será inserido aqui -->
+    </div>
+</body>
+<script>
+    // Recupere as configurações armazenadas em localStorage
+const corFundo = localStorage.getItem("corFundo");
+const textoPersonalizado = localStorage.getItem("textoPersonalizado");
+
+// Aplica as configurações na div de conteúdo
+const conteudoDiv = document.getElementById("conteudo");
+conteudoDiv.style.backgroundColor = corFundo;
+conteudoDiv.innerText = textoPersonalizado;
+
+</script>
+</html>

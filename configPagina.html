@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de jogos INSANOS</title>
+    <link rel="stylesheet" href="styleConfigPagina.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="foto-agenda">
+            <img src="insanos.png" insanos" width="180px">
+            <h1> Adicionar Confrontos</h1>
+            <a href="config.html">Voltar para a Agenda de Jogos</a>
+        </header>
+        <main class="agenda-jogos">
+            <div class="painel-jogos">
+                <div class="confronto">
+                    <input id="data" type="date" placeholder="Data do Jogo" class="config-jogos">
+                    <input id="hora" type="time" placeholder="Horário do Jogo" class="config-jogos">
+                    <input id="local" type="text" placeholder="Local do Jogo" class="config-jogos">
+                    <input id="confronto" type="text" placeholder="Confronto" class="config-jogos" value="Insanos X">
+                    <button id="button" class="config-jogos" type="button">Salvar</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        let dataArray = JSON.parse(localStorage.getItem("Data")) || []
+        let horaArray = JSON.parse(localStorage.getItem("Hora")) || []
+        let localArray = JSON.parse(localStorage.getItem("Local")) || []
+        let confrontoArray = JSON.parse(localStorage.getItem("Confronto")) || []
+
+        const data = document.getElementById("data")
+        const hora = document.getElementById("hora")
+        const local = document.getElementById("local")
+        const confronto = document.getElementById("confronto")
+
+        function limparCampos() {
+            local.value = ''
+            data.value = ''
+            confronto.value = ''
+            hora.value = ''
+        }
+
+        const button = document.getElementById("button")
+        button.addEventListener("click", function () {
+            dataArray.push(data.value)
+            horaArray.push(hora.value)
+            localArray.push(local.value)
+            confrontoArray.push(confronto.value)
+
+            localStorage.setItem("Data", JSON.stringify(dataArray))
+            localStorage.setItem("Hora", JSON.stringify(horaArray))
+            localStorage.setItem("Local", JSON.stringify(localArray))
+            localStorage.setItem("Confronto", JSON.stringify(confrontoArray))
+
+            limparCampos();
+
+            confronto.value = 'Insanos X '
+        });
+    </script>
+</body>
+
+</html>

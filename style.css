@@ -1,0 +1,84 @@
+@font-face {
+    font-family: insanos ;
+    src: url('Mulish/Mulish-VariableFont_wght.ttf');
+}
+
+.container{
+    flex-wrap: wrap;    
+    background-color: #051026;       
+    height: 220px;
+    margin: 0 auto;      
+}
+
+
+body{
+    background-color:#0D0D0D;
+}
+h1{
+    color: white;
+    font-size: 25px;
+    margin: 0 auto;
+    font-family: insanos;
+}
+
+.foto-agenda{
+    display: flex;    
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #051026;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.agenda-jogos{
+    flex-wrap: wrap;
+    background-image: linear-gradient(30deg ,#8C0F1A,#8C142A,#051026,#0D0D0D);
+    color: #F2F2F2;
+    font-family: teste;
+    border: 1px solid #051026;
+    box-shadow: 0px 0px 10px #8C0F1A;
+    margin: 15px; 
+}
+.confronto{
+    display: flex;
+    flex-wrap: wrap;
+    width: 280;
+    gap: 10px;     
+}
+
+.confronto > button{   
+    height: 25px;    
+    position: relative;
+    bottom: -20px;   
+    border-radius: 10px;
+    background-color: #0D0D0D ;
+    box-shadow: 2px 2px 10px #8c0f19b4;
+    color: #F2F2F2 ;
+    width: 100px;
+    text-align: center;
+    font-family: insanos;
+    font-size: smaller;  
+    padding: 100px;  
+}
+
+.painel-jogos{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap-reverse;
+    text-shadow: 2px 2px 10px #051026;
+}
+
+.painel-jogos:hover{
+    background-color: var(--cor-fundo-vitoria);    
+    
+}
+:root{
+    --cor-fundo-vitoria : rgb(26, 202, 26);
+    --cor-fundo-derrota: rgb(255, 0, 0)
+}
+
+a{
+    color: #F2F2F2;
+}
+
